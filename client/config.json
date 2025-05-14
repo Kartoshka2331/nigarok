@@ -1,0 +1,14 @@
+{
+  "servers": [
+    {
+      "name": "DE | By Kartoshka",
+      "ip": "kartoshka2331.guru",
+      "port": 13882
+    },
+    {
+      "name": "KZ | By Kviki",
+      "ip": "92.38.49.231",
+      "port": 13882
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "host": "0.0.0.0",
+  "port": 13882,
+  "allowed_port_range": [1024, 65535],
+  "accounts": [
+    {"login": "kartoshka2331", "password": "Hf3^H!8bC)2ebE7"},
+    {"login": "kviki13", "password": "S+jVh58*rS4Uc3!"},
+    {"login": "foxalut", "password": "x;y4iM;7X!s3NU3"}
+  ]
+}

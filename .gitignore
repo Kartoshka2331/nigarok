@@ -1,0 +1,57 @@
+# Passwords
+credentials.json
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.env
+.env.*
+*.sqlite3
+*.log
+temp/
+
+# Virtual env
+.venv/
+venv/
+
+# VSCode / PyCharm
+.vscode/
+.idea/
+
+# Pydantic cache
+__pydantic_cache__/
+
+# Mypy / Pyright
+.mypy_cache/
+.pyright/
+
+# Coverage / Testing
+.coverage
+htmlcov/
+.cache/
+pytest_cache/
+
+# Alembic
+alembic/versions/*.py
+
+# FastAPI / Uvicorn logs
+logs/
+
+# Node / frontend
+node_modules/
+dist/
+build/
+*.lock
+*.tsbuildinfo
+
+# Docker
+*.pid
+*.db
+docker-compose.override.yml
+*.sock
+
+# OS
+.DS_Store
+Thumbs.db
