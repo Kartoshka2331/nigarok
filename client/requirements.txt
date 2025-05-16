@@ -1,0 +1,2 @@
+flet>=0.28.2
+pyperclip>=1.8.2
