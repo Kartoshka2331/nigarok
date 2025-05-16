@@ -286,15 +286,17 @@ class TunnelWindow:
             self.tasks = [asyncio.create_task(self.server_listener_loop()), asyncio.create_task(self.ping_loop())]
 
     async def stop(self, event=None):
-        await self.log("Stopping client.", "warning")
+        if not self.reconnecting:
+            await self.log("Stopping client.", "warning")
 
-        self.running = False
-        for task in self.tasks:
-            task.cancel()
-        try:
-            await asyncio.gather(*self.tasks, return_exceptions=True)
-        except asyncio.CancelledError:
-            pass
+        if not self.reconnecting:
+            self.running = False
+            for task in self.tasks:
+                task.cancel()
+            try:
+                await asyncio.gather(*self.tasks, return_exceptions=True)
+            except asyncio.CancelledError:
+                pass
 
         self.tasks.clear()
         for connection_id in list(self.connection_map):
@@ -307,12 +309,13 @@ class TunnelWindow:
                 pass
             self.writer = None
 
-        self.remote_address_field.value = "—"
-        self.page.clean()
-        self.page.overlay.clear()
+        if not self.reconnecting:
+            self.remote_address_field.value = "—"
+            self.page.clean()
+            self.page.overlay.clear()
 
-        from ui.login_window import LoginWindow
-        LoginWindow(self.page, self.config_manager).build()
+            from ui.login_window import LoginWindow
+            LoginWindow(self.page, self.config_manager).build()
 
     async def reconnect(self):
         if not self.reconnecting:

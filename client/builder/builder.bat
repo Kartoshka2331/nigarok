@@ -9,7 +9,7 @@ flet pack main.py ^
     --icon builder/icon.ico ^
     --product-name "nigarok" ^
     --file-description "Nigarok client" ^
-    --product-version 1.2 ^
+    --product-version 1.3 ^
     --company-name "Nigarok"
 
 deactivate
